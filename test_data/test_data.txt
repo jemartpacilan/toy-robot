@@ -1,0 +1,61 @@
+---------------------
+TEST 1: Ignores commands if the robot is not yet on the table
+
+command list:
+MOVE
+LEFT
+RIGHT
+REPORT
+
+result: Robot was not found on the table.
+
+---------------------
+
+TEST 2: Performs the Place Command
+commands:
+PLACE 1,2,NORTH
+REPORT
+
+result: 1, 2, NORTH
+
+---------------------
+
+TEST 3: Robot is placed on an invalid position
+commands:
+PLACE 9,9,NORTH
+REPORT
+
+result: Robot was not found on the table.
+
+---------------------
+
+TEST 4: Robot rotates right
+commands:
+PLACE 1,1,NORTH
+RIGHT
+REPORT
+RIGHT
+REPORT
+RIGHT
+REPORT
+RIGHT
+REPORT
+
+result: output will show the robot facing East, South, West and North again in sequence
+
+---------------------
+
+TEST 5: Robot rotates left
+PLACE 1,1,NORTH
+LEFT
+REPORT
+LEFT
+REPORT
+LEFT
+REPORT
+LEFT
+REPORT
+
+expected result: output will show the robot facing West, South, East and North again in sequence
+
+---------------------
