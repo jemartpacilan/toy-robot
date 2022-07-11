@@ -35,6 +35,18 @@ python -m unittest
 ```
 The command above will run all the tests inside the "tests" directory
 
+## Design Considerations
+- The Command Pattern was implemented to handle validation, parsing, and orchestration of user commands.
+- The Handling of I/O is CLI based but if there's a need to switch to file inputs/web API there would be no extensive refactoring needed due to the flexibility of the command processor class.
+- Applied HashMap to route commands.
+- Implemented tests for each entities of the application.
+
+### Things I would implement in the future that are not specified in the requirements
+- Add an additional command that would help users navigate the application like a "HELP" command
+- Add an additional command that would let users close the application like a "QUIT" command
+- Provide an option that lets the users choose whatever input handling they want (e.g. file or cli based)
+- Provide clearer text to handle exceptions
+
 ## Specification
 
 ### Description
@@ -78,5 +90,5 @@ The toy robot must not fall off the table during movement. This also includes
 the initial placement of the toy robot. Any move that would cause the robot 
 to fall must be ignored.
 
-### Example Input and Output
+## Example Input and Output
 You can see some test scenarios that can be performed on this application [here](./test_data/test_data.txt)
