@@ -8,6 +8,7 @@ if __name__ == "__main__":
     table = Table(5, 5)
     command_processor = CommandProcessor(robot, table)
 
+    print("Input Command >> ")
     for command in sys.stdin:
         command = command_processor.parse(command)
         if command:
